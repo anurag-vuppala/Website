@@ -15,7 +15,7 @@
                 Hi
                 {% if request.path == profile_url %} {{ user.username }}! {% else %}<a href = "{{ profile_url }}">{{ user.username }}!!</a>{% endif %}
              </span>
-            <span><a href="{% url 'logout' %}">Logout</a></span>
+            <span><a href="{% url 'accounts:logout' %}">Logout</a></span>
         {% else %}
             <span><a href="{% url 'accounts:login' %}">Login</a></span> 
         {% endif %}
