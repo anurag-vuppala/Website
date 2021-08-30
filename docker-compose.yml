@@ -1,0 +1,20 @@
+version: "3.9"
+
+x-service-volumes: service-volumes
+  - ./:/app/:rw,cashed
+
+services: 
+  website:
+    image: mywesite_demo:latest
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes: *service-volumes
+    depends_on: 
+      - db_migrate
+    port:
+      - "8000:8000"
+
+
+db_migrate:
+  image: mywebsite_demo:latest
+  command: python manage.py runserver
+  volumes: *service-volumes
