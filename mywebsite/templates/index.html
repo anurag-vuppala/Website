@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{%  load static  %}
 
 {% block title %}
 <title>This is my Webpage</title>
@@ -6,6 +7,7 @@
 
 
 {% block content %}
+<img  src= {% static 'theme/assets/img/app-google-play-badge.svg' %} alt="..." />
 <h1> This is index page </h1>
 	this is contant
 {% endblock %}
